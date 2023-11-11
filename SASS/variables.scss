@@ -1,0 +1,525 @@
+//Tipography
+$ff:'Kumbh Sans', sans-serif;
+$fw-reg: 400;
+$fw-bld: 700;
+
+$fs-12: 0.75rem;
+$fs-13: 0.8125rem;
+$fs-15: 0.9375rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-24: 1.5rem;
+$fs-28: 1.75rem;
+$fs-32: 2rem;
+$fs-44: 2.75rem;
+$fs-48: 3rem;
+
+//Colors
+$white: rgb(255, 255, 255);
+$very-light-gray: rgba(246, 248, 253, 1);
+$light-gray: rgba(182, 188, 200, 1);
+$mid-grey: rgba(105, 112, 125, 1);
+$dark-graysh-blue: rgba(29, 32, 38, 1);
+
+$very-light-orange: rgba(255, 238, 226, 1);
+$orange: rgba(255, 126, 27, 1);
+
+
+
+//Utility and Mixins
+.l-height26{
+  line-height: 1.625rem;
+}
+
+.fs-16{
+  font-size: $fs-16;
+}
+
+.fw-reg{
+  font-weight: $fw-reg;
+}
+
+.fw-bld{
+  font-weight: $fw-bld;
+}
+
+.clr-mid-gray{
+  color: $mid-grey;
+}
+
+.clr-light-gray{
+  color: $light-gray;
+}
+
+.bg-very-light-gray{
+  background-color: $very-light-gray;
+}
+
+.clr-dark{
+  color: $dark-graysh-blue;
+}
+
+.clr-white{
+  color: $white;
+}
+
+.bg-white{
+  background-color: $white;
+}
+
+.clr-orange{
+  color: $orange;
+}
+
+.bg-orange{
+  background-color: $orange;
+}
+
+.bg-very-light-orange{
+  background-color: $very-light-orange;
+}
+
+//Mixins
+@mixin flex-col{
+  @include flex-col-start;
+  align-items: center;
+}
+
+@mixin flex-col-start{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+@mixin flex-row{
+  @include flex-row-start;
+  justify-content: center;
+}
+
+@mixin flex-row-start{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, h5, p,
+figure, blockquote, dl, dd,a, button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.1;
+  font-family: $ff;
+  background-color: $white;
+  position: relative;
+  overflow-x:hidden;
+}
+
+.body-active{
+  overflow: hidden;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+  border: none;
+  outline: none;
+  color: initial;
+  background: transparent;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+//Blocks
+.logo{
+  cursor: pointer;
+}
+
+@media screen and (min-width: 767px) {
+  #openbtn,
+  #closebtn{
+    display: none;
+  }
+}
+
+h1{
+  font-size: $fs-28;
+    @media screen and (min-width: 768px) {
+      font-size: $fs-44;
+    }
+}
+
+h3{
+  font-size: $fs-12;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    font-size: $fs-13;
+  }
+  @media screen and (min-width: 900px) {
+    letter-spacing: 2px;
+  }
+}
+
+.description-item p{
+  font-size: $fs-15;
+  @media screen and (min-width: 768px) {
+    font-size: $fs-16;
+  }
+}
+
+.new-price p{
+  font-size: $fs-28;
+}
+
+.avatar{
+  width: 1.5rem;
+  @media screen and (min-width: 768px) {
+    width: 2.5rem;
+  }
+  @media screen and (min-width: 900px) {
+    width: 3.125rem;
+    cursor: pointer;
+  }
+}
+
+.btn{
+  border-radius: 10px;
+  padding-block: 1.375rem 1.125rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+    &:hover{
+      background-color: #ffab6b;
+    }
+}
+
+.btn[data-type="btn-icon"]{
+  @include flex-row;
+  gap: $fs-16;
+  box-shadow: 0px 20px 50px -20px $orange; 
+  @media screen and (min-width: 1200px) {
+    width: 17rem;
+    height: 3.5rem;
+    box-shadow: none; 
+  }
+}
+
+.cart-btn{
+  height: fit-content;
+  width: fit-content;
+}
+
+.cart-header{
+  transition: all 0.3s linear;
+    &:hover path{
+      fill: $dark-graysh-blue;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+  .quantity-btn > button,
+  .btn{
+    cursor: pointer;
+  }
+}
+
+.wrapper{
+  position: relative;
+  padding-block-end: 5.5rem;
+    @media screen and (min-width: 1200px) {
+      width: 69.375rem;
+      margin-inline: auto;
+    }
+}
+
+.cart-popup{
+  position: absolute;
+  z-index: 10;
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 2rem 1.5rem;
+  height: 16rem;
+  inset: 4.75rem 0 0 0;
+  width: calc(100% - 1rem);
+  margin-inline: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+    @media screen and (min-width: 767px) {
+      box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.50);
+      max-width: 22.5rem;
+      margin-inline: 0;
+      right: 2rem;
+      left: auto;
+    }
+
+    @media screen and (min-width: 900px) {
+      top: 5.875rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+      right: -2rem;
+    }
+
+    .line{
+      position: absolute;
+      top: 4.1875rem;
+      left: 0;
+      right: 0;
+    }
+
+    #empty-message{
+      margin-inline: auto;
+      width: fit-content;
+      margin-block-start: 6rem;
+    }
+
+    .cart-summary{
+      margin-block-start: 3.25rem
+    }
+
+    .cart-description{
+      @include flex-row;
+      justify-content: space-between;
+      gap: $fs-16;
+      margin-block-end: 1.5rem;
+        .item-quantity{
+          @include flex-row-start;
+          gap: 5px;
+        }
+    }
+
+    .delete-icon{
+      cursor: pointer;
+    }
+}
+
+.popup-open{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.item-thumb-cart{
+  width: 3.125rem;
+  border-radius: 4px;
+}
+
+
+/////splide (img slider) options
+.splide__pagination{
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #main-slider{
+    width: calc(100% - 5rem);
+    margin-inline: auto;
+    margin-block-start: 2rem;
+  }
+
+  #main-slider-track,
+  #dialog-slider-track{
+    border-radius: $fs-15;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #main-slider{
+    width: calc(100% - 25rem);
+    margin-block-start: 4rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #main-slider{
+    width: 27.8125rem;
+  }
+}
+
+#main-slider .splide__arrows button{
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: $white;
+  opacity: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  #thumbnail-slider{
+    margin-block-start: $fs-32;
+  }
+
+  .splide__track--nav > .splide__list > .splide__slide.is-active {
+    border: none;
+    height: 5.5px!important;
+    width: 5.5px!important;
+    transform: none!important;
+  }
+
+  #thumbnail-slider-list,
+  #dialog-thumbnail-list{
+    width: 27.8125rem;
+    gap: 2rem;
+      & li,
+      & li img {
+        width: 5.5rem!important;
+        height: 5.5rem!important;
+        transition: all 0.2s ease;
+        border-radius: 10px;
+      }
+  }
+
+  .splide__slide{
+    margin-right: 0!important;
+  }
+
+  #main-slider .splide__arrows{
+    display: none;
+  }
+}
+
+///DIALOG SLIDER AND THUMBNAIL
+dialog{
+  background: none;
+  border: none;
+  overflow-x: hidden;
+  outline: none;
+  width: 100%;
+  height: 150vh;
+    &::backdrop{
+      background-color: #000;
+      opacity: 0.75;
+    }
+}
+
+.wrapper[data-type="dialog"]{
+  width: 34.375rem;
+  @include flex-col;
+  padding-block-start: 4rem;
+    .close-button{
+      align-self: end;
+      margin-block-end: $fs-24;
+      cursor: pointer;
+    }
+}
+
+#dialog-thumbnail-track{
+  margin-block-start: 2.5rem;
+  width:  34.375rem;
+}
+
+#dialog-thumbnail-list{
+  width: 100%;
+  margin-inline: auto;
+  @include flex-row;
+}
+
+#thumbnail-slider-list li,
+#dialog-thumbnail-list li{
+  position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: transparent;
+    }
+
+    &:hover::after{
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%);
+    }
+
+    &.is-visible.is-active::after{
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 100%);
+      border: 2px solid $orange;
+    }
+}
+
+#dialog-slider .splide__arrows button{
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: $white;
+  opacity: 1;
+}
+
+#dialog-slider .splide__arrow--prev{
+  left: -1.5rem;
+}
+
+#dialog-slider .splide__arrow--next{
+  right: -1.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  #thumbnail-slider{
+    display: none;
+  }
+
+  .dialog{
+    display: none;
+  }
+}

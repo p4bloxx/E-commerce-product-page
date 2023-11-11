@@ -1,0 +1,238 @@
+@use 'variables' as *;
+
+header{
+  height: 4.25rem;
+  @include flex-row-start;
+  padding-inline: 1.5rem;
+    @media screen and (min-width: 768px) {
+     border-bottom: 1px solid rgba(228, 233, 242, 1);
+    }
+
+    @media screen and (min-width: 900px) {
+      height: 6.625rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+      padding-inline: 0;
+    }
+
+    @media screen and (max-width: 767px) {
+      .logo{
+        margin-inline-start: $fs-16;
+      }
+    }
+    
+    nav ul li{
+      font-weight: $fw-bld;
+      font-size: $fs-18;
+      @media screen and (min-width: 1200px) {
+        font-size: $fs-15;
+        font-weight: $fw-reg;
+        color: $mid-grey;
+        position: relative;
+          &::after{
+            content: '';
+            position: absolute;
+            bottom: -3rem;
+            height: 4px;
+            background-color: $orange;
+            width: 100%;
+            left: 0;
+            transition: all 0.3s ease;
+            opacity: 0;
+          }
+          &:hover,
+          &:hover::after{
+            opacity: 1;
+            color: $dark-graysh-blue;
+          }
+      }
+    } 
+
+    @media screen and (max-width: 767px) {
+      .nav-box{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 2;
+        width: 15.625em;
+        background-color: $white;
+        padding-block-start: 1.5rem;
+        padding-inline-start: 1.5rem;
+        @include flex-col-start;
+        gap: 3.3125rem;
+        box-shadow: 0 0 0 100vw rgb(0, 0, 0, 0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transform: translateX(-100%);
+          
+          & nav ul li:not(:last-child){
+            margin-block-end: 1.25rem;
+          }
+      }
+    }
+    .nav-open{
+      transform: translateX(0);
+      box-shadow: 0 0 0 100vw rgb(0, 0, 0, 0.75);
+      z-index: 9999999999999;
+    }
+
+    @media screen and (min-width: 768px) {
+      .nav-box{
+        position: static;
+        height: auto;
+        margin-inline-start: 2rem;
+          & ul{
+            @include flex-row;
+            gap: $fs-24;
+          }
+      }
+    }
+}
+
+.account-box{
+  @include flex-row;
+  gap: $fs-16;
+  margin-inline-start: auto;
+    @media screen and (min-width: 1200px) {
+      gap: 2.875rem;
+      .icon-user{
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        border-radius: 100vmax;
+          &:hover{
+            border-color: $orange;
+          }
+      }
+    }
+}
+
+.icon-cart{
+  position: relative;
+  cursor: pointer;
+    .bubble{
+      position: absolute;
+      background-color: $orange;
+      width: 1.1875rem;
+      height: $fs-13;
+      border-radius: 0.40625rem;
+      right: -0.3125rem;
+      top: -0.3125rem;
+      font-size: 0.625rem;
+      display: grid;
+      place-items: center;
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .bubble-active{
+      opacity: 1;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+  main{
+    @include flex-row;
+  }
+}
+
+.content-side{
+  padding-block-start: 1.5rem;
+  padding-inline: 1.5rem;
+    @media screen and (min-width: 768px) {
+      padding-inline: 2.5rem;
+    }
+
+    @media screen and (min-width: 900px) {
+      padding-inline: 7.8125rem 3rem;
+    }
+
+    @media screen and (min-width: 900px) and (max-width: 1200px) {
+      padding-inline: 0;
+      width: calc(100% - 27rem);
+      margin-inline: auto;
+      padding-block-start: 4.5rem;
+    }
+
+    .description-item{
+      margin-block-end: 1.5rem;
+      h1{
+        margin-block: 1.25rem $fs-16;
+      }
+      @media screen and (min-width: 900px) {
+        margin-block-end: $fs-28;
+        h1{
+          margin-block: $fs-28 $fs-32;
+        }
+      }
+    }
+
+    .price-box,
+    .new-price{
+      @include flex-row-start;
+    }
+
+    .price-box{
+      margin-block-end: $fs-24;
+      @media screen and (min-width: 768px) {
+        margin-block-end: 3rem;
+      }
+
+      @media screen and (min-width: 1200px) {
+        @include flex-col-start;
+        gap: 10px;
+      }
+    }
+
+    .new-price{
+      gap: $fs-16;
+        .sale{
+          padding-inline: 8px;
+          padding-block: 7px 6px;
+          border-radius: 6px;
+        }
+    }
+
+    .old-price{
+      margin-inline-start: auto;
+      text-decoration:line-through; 
+      text-decoration-color: $light-gray;
+      @media screen and (min-width: 1200px) {
+        margin-inline-start: 0;
+      }
+    }
+
+    .quantity-box{
+      @include flex-col;
+      gap: $fs-16;
+      @media screen and (min-width: 768px) {
+        padding-inline: 2rem;
+      }
+
+      @media screen and (min-width: 900px) {
+        padding-inline: 0;
+      }
+        .quantity-btn{
+          width: 100%;
+          padding-inline: $fs-24;
+          padding-block: 1.375rem 1.125rem;
+          border-radius: 10px;
+          @include flex-row;
+          justify-content: space-between;
+        }
+
+        @media screen and (min-width: 1200px) {
+          @include flex-row-start;
+          .quantity-btn{
+            width: 9.8125rem;
+          }
+          .quantity-btn button{
+            transition: all 0.3s ease;
+              &:hover{
+                filter: opacity(0.7);
+              }
+          }
+        }
+    }
+}

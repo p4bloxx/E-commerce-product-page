@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce - product page</title>
+  <link rel="stylesheet" href="ASSETS/splide/splide.min.css">
+  <link rel="stylesheet" href="CSS/variables.css">
+  <link rel="stylesheet" href="CSS/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="JS/dialog.js" defer></script>
+  <script src="JS/main.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <img src="ASSETS/images/icon-menu.svg" alt="" id="openbtn">
+      <img src="ASSETS/images/logo.svg" alt="logotype of brand - sneakers" class="logo">
+      <div class="nav-box" data-type="primary-nav">
+        <img src="ASSETS/images/icon-close.svg" alt="" id="closebtn">
+        <nav>
+          <ul class="primary-menu">
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="account-box">
+        <div class="icon-cart" id="cart">
+          <svg width="22" height="20" class="cart-header" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+            fill="#69707D" fill-rule="nonzero"/></svg>
+          <span class="bubble | clr-white fw-bld" id="bubble">3</span>
+        </div>
+        <div class="icon-user">
+          <img src="ASSETS/images/image-avatar.png" alt="" class="avatar">
+        </div>
+      </div>
+      <div class="cart-popup | bg-white" id="cart-popup">
+        <span class="cart-name | clr-dark fw-bld fs-16">Cart</span>
+        <img src="ASSETS/images/Rectangle.png" alt="" class="line">
+        <div class="cart-summary">
+          <p hidden id="empty-message" class="clr-mid-gray fw-bld fs-16">Your cart is empty.</p>
+          <div class="cart-items" id="cart-items">
+            <div class="cart-description">
+              <img src="ASSETS/images/image-product-1-thumbnail.jpg" alt="" class="item-thumb-cart">
+              <div class="cart-item-content">
+                <h5 class="l-height26 clr-mid-gray fw-reg fs-16">Fall Limited Edition Sneakers</h5>
+                <div class="item-quantity">
+                  <p class="l-height26 clr-mid-gray fw-reg fs-16">$125.00 <span id="item-quantity-cart" class="l-height26">x 3</span></p>
+                  <p class="l-height26 clr-dark fw-bld fs-16" id="total">$375.00</p>
+                </div>
+              </div>
+              <img src="ASSETS/images/icon-delete.svg" alt="" class="delete-icon" id="delete">
+            </div>
+            <button class="btn | bg-orange clr-white fw-bld">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="slider-side">
+        <section class="splide" id="main-slider" aria-label="carousel of selected item's photography">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide"><img src="ASSETS/images/image-product-1.jpg" alt="photo of Sneaker shoes, with a right shoe on 3/4 side" class="img-slide"></li>
+              <li class="splide__slide"><img src="ASSETS/images/image-product-2.jpg" alt="phot of Sneaker shoes, back and front side" class="img-slide"></li>
+              <li class="splide__slide"><img src="ASSETS/images/image-product-3.jpg" alt="photo of Sneaker shoes, with right shoe on front view" class="img-slide"></li>
+              <li class="splide__slide"><img src="ASSETS/images/image-product-4.jpg" alt="photo of Sneaker shoes, with a left show in left side" class="img-slide"></li>
+            </ul>
+          </div>
+        </section>
+        <section id="thumbnail-slider" class="splide" aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide"><img src="ASSETS/images/image-product-1-thumbnail.jpg" alt="photo of Sneaker shoes, with a right shoe on 3/4 side"></li>
+              <li class="splide__slide"><img src="ASSETS/images/image-product-2-thumbnail.jpg" alt="phot of Sneaker shoes, back and front side"></li>
+              <li class="splide__slide"><img src="ASSETS/images/image-product-3-thumbnail.jpg" alt="photo of Sneaker shoes, with right shoe on front view"></li>
+              <li class="splide__slide"><img src="ASSETS/images/image-product-4-thumbnail.jpg" alt="photo of Sneaker shoes, with a left show in left side"></li>
+            </ul>
+          </div>
+        </section>
+        <dialog class="dialog">
+          <div class="wrapper" data-type="dialog">
+            <div class="close-button">
+              <img src="ASSETS/images/X.svg" alt="">
+            </div>
+            <div class="modal-slider">
+              <section class="splide" id="dialog-slider" aria-label="carousel of selected item's photography">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="ASSETS/images/image-product-1.jpg" alt="photo of Sneaker shoes, with a right shoe on 3/4 side"></li>
+                    <li class="splide__slide"><img src="ASSETS/images/image-product-2.jpg" alt="phot of Sneaker shoes, back and front side"></li>
+                    <li class="splide__slide"><img src="ASSETS/images/image-product-3.jpg" alt="photo of Sneaker shoes, with right shoe on front view"></li>
+                    <li class="splide__slide"><img src="ASSETS/images/image-product-4.jpg" alt="photo of Sneaker shoes, with a left show in left side"></li>
+                  </ul>
+                </div>
+              </section>
+              <section id="dialog-thumbnail" class="splide" aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="ASSETS/images/image-product-1-thumbnail.jpg" alt="photo of Sneaker shoes, with a right shoe on 3/4 side"></li>
+                    <li class="splide__slide"><img src="ASSETS/images/image-product-2-thumbnail.jpg" alt="phot of Sneaker shoes, back and front side"></li>
+                    <li class="splide__slide"><img src="ASSETS/images/image-product-3-thumbnail.jpg" alt="photo of Sneaker shoes, with right shoe on front view"></li>
+                    <li class="splide__slide"><img src="ASSETS/images/image-product-4-thumbnail.jpg" alt="photo of Sneaker shoes, with a left show in left side"></li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+        </dialog>
+      </div>
+
+      <div class="content-side">
+        <div class="description-item">
+          <h3 class="brand-name fw-bld clr-orange">Sneaker Company</h3>
+          <h1 class="clr-dark fw-bld">Fall Limited Edition Sneakers</h1>
+          <p class="l-height26 clr-mid-gray fw-reg">These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        </div>
+        <div class="price-quantity">
+          <div class="price-box">
+            <div class="new-price">
+              <p class="clr-dark fw-bld">$125.00</p>
+              <span class="sale | fw-bld clr-orange fs-16 bg-very-light-orange">50%</span>
+            </div>
+            <div class="old-price">
+              <p class="l-height26 clr-light-gray fs-16 fw-bld">$250.00</p>
+            </div>
+          </div>
+          <div class="quantity-box">
+            <div class="quantity-btn | bg-very-light-gray">
+              <button class="clr-orange" id="minus"><img src="ASSETS/images/minus.png" alt=""></button>
+              <span class="clr-dark fw-bld" id="quantity">0</span>
+              <button class="clr-orange" id="plus"><img src="ASSETS/images/plus.png" alt=""></button>
+            </div>
+            <button data-type="btn-icon" class="btn | bg-orange clr-white fw-bld"><span><svg width="22" height="20" class="cart-btn" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+              fill="#ffffff" fill-rule="nonzero"/></svg></span>Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="ASSETS/splide/splide.min.js"></script>
+</body>
+</html>
