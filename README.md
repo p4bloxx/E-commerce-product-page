@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/ecommerce-product-page-htmlcsssass-splidejs-js-6Fgk70OarO](https://www.frontendmentor.io/solutions/ecommerce-product-page-htmlcsssass-splidejs-js-6Fgk70OarO)
+- Live Site URL: [https://p4bloxx.github.io/E-commerce-product-page/](https://p4bloxx.github.io/E-commerce-product-page/)
 
 ## My process
 
